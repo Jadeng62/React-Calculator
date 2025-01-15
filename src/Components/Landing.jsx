@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function LandingPage() {
+function Landing() {
   return (
     <div style={{ textAlign: "center", marginTop: 100 }}>
       <h1>This is Your Landing Page</h1>
@@ -14,4 +14,4 @@ function LandingPage() {
   );
 }
 
-export default LandingPage;
+export default Landing;

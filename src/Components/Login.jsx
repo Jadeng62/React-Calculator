@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 
+import "../Styles/login.css"
+
 const URL = import.meta.env.VITE_BASE_URL;
 
 const Login = ({ setToggleLogin }) => {
@@ -59,26 +61,13 @@ const Login = ({ setToggleLogin }) => {
     e.preventDefault();
     const user = { username: "demo", password: "password" };
     postFetch(user);
+    setToggleLogin(true)
   }
 
   return (
-    <div style={{ textAlign: "center" }}>
-      <h1>Login Component</h1>
-      <br />
-      <h2>
-        Use the DemoUser button to login and save time during your presentation
-      </h2>
-      <button onClick={handleDemoSignIn}>Demo User</button>
-      <br />
-      <br />
-      <br />
-
-      <h3> Remove the 'br' tags and these instructions if you use this code</h3>
-
-      <br />
-      <br />
-      <br />
-      <h3>Below is the regular login form which should be functional</h3>
+    <div style={{ textAlign: "center" }} className="login-container">
+      <h3 style={{textAlign:'center', fontStyle: 'unset'}}>Please Login if you have an account if not register below </h3>
+      <div className="login-form-container">
       <form onSubmit={handleSubmit}>
         <label htmlFor="username">
           <input
@@ -88,6 +77,7 @@ const Login = ({ setToggleLogin }) => {
             placeholder="username"
             autoComplete="username"
             onChange={handleChange}
+            className="login-input"
           />
         </label>
 
@@ -99,13 +89,16 @@ const Login = ({ setToggleLogin }) => {
             placeholder="password"
             onChange={handleChange}
             autoComplete="current-password"
+            className="login-input"
           />
         </label>
-        <button>Submit</button>
+        <button className="login-btn">Login</button>
       </form>
-      <p>
-        No Account? <Link to="/register">Register</Link>
-      </p>
+      </div>
+      <section className="login-section">
+      <button onClick={handleDemoSignIn} className="login-btn demo">Demo User</button>
+        No Account? <Link to="/register" className="login-register-link">Register</Link>
+      </section>
     </div>
   );
 };
