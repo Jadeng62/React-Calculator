@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 
 import { Link } from "react-router-dom";
 
+import "../Styles/nav.css"
+
+
 const URL = import.meta.env.VITE_BASE_URL;
 
 const NavBar = ({ toggleLogin, handleLogout }) => {
@@ -29,22 +32,21 @@ const NavBar = ({ toggleLogin, handleLogout }) => {
 
   return (
     <div className="navbar-container">
-      <h1>Navbar Component</h1>
       <h2>
         <Link style={{ textDecoration: "none" }} to="/">
-          Your image or Logo (click here to go to Landing Page)
+        <h1 className="nav-h1" style={{textAlign: 'center'}}>Calculator App</h1>
         </Link>
       </h2>
 
       {!toggleLogin ? (
         <Link to={"/login"}>
-          <span>Login</span>
+          <span className="nav-login">Login</span>
         </Link>
       ) : (
         <div>
           {user && <span>Hello, {user.username.toUpperCase()}? | </span>}
           <Link onClick={handleLogout}>
-            <span>Logout</span>
+            <span className="nav-logout">Logout</span>
           </Link>
         </div>
       )}

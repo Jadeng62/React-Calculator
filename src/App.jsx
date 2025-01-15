@@ -6,7 +6,9 @@ import Register from "./Components/Register";
 import Login from "./Components/Login";
 import Dashboard from "./Components/Dashboard";
 import NavBar from "./Components/NavBar";
-import LandingPage from "./Components/LandingPage";
+import Landing from "./Components/Landing";
+import Calculations from "./Components/Calculations";
+import History from "./Components/History";
 
 function App() {
   const navigate = useNavigate();
@@ -29,7 +31,7 @@ function App() {
       />
 
       <Routes>
-        <Route path="/" element={<LandingPage />} />
+        <Route path="/" element={<Landing />} />
         <Route
           path="/login"
           element={<Login setToggleLogin={setToggleLogin} />}
@@ -40,7 +42,14 @@ function App() {
         />
 
         <Route element={<ProtectedRoute />}>
-          {/* Place protected routes here */}
+          <Route 
+          path="/calculations"
+          element={<Calculations />}
+          />
+          <Route 
+          path="/history"
+          element={<History />}
+          />
           <Route
             path="/dashboard"
             element={<Dashboard handleLogout={handleLogout} />}
