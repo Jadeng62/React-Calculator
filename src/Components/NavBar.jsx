@@ -33,7 +33,7 @@ const NavBar = ({ toggleLogin, handleLogout }) => {
   return (
     <div className="navbar-container">
       <h2>
-        <Link style={{ textDecoration: "none" }} to="/">
+        <Link style={{ textDecoration: "none" }} to="/dashboard">
         <h1 className="nav-h1" style={{textAlign: 'center'}}>Calculator App</h1>
         </Link>
       </h2>

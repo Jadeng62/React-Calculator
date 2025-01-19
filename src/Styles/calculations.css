@@ -1,7 +1,7 @@
 .calculator-box {
     width: 300px;
-    margin: 0 auto;
-    padding: 20px;
+    margin: auto;
+    padding: 40px;
     border: 2px solid #000;
     border-radius: 10px;
     overflow: hidden;
@@ -14,21 +14,34 @@
     margin-top: 32px;
   }
   
-  .display {
-    height: 50px;
+  .calculator-display {
     background: #222;
     color: #fff;
+    padding: 15px;
+    font-size: 2rem;
+    text-align: right;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    min-height: 50px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding: 0 10px;
-    font-size: 1.5rem;
+    overflow: hidden;
   }
+  
+  .calculator-display.output-active {
+    color: #0f0; 
+  }
+  
+  .calculator-display.input-active {
+    color: #fff; 
+  }
+  
   
   .button-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Four equal columns */
-    gap: 5px; /* Space between buttons */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 5px; 
     padding: 10px;
     background: #f3f3f3;
   }
