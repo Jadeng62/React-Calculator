@@ -6,7 +6,6 @@ import Register from "./Components/Register";
 import Login from "./Components/Login";
 import Dashboard from "./Components/Dashboard";
 import NavBar from "./Components/NavBar";
-import Landing from "./Components/Landing";
 import Calculations from "./Components/Calculations";
 import History from "./Components/History";
 
@@ -31,7 +30,6 @@ function App() {
       />
 
       <Routes>
-        <Route path="/" element={<Landing />} />
         <Route
           path="/login"
           element={<Login setToggleLogin={setToggleLogin} />}
